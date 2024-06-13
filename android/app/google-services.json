@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "515501218681",
+    "project_id": "neur-o-s-r5lsu7",
+    "storage_bucket": "neur-o-s-r5lsu7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515501218681:android:3db74540052a07cd00eda8",
+        "android_client_info": {
+          "package_name": "com.mycompany.neuros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515501218681-an3p8jfoutuhanbccpn81e8rltjp7737.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.neuros",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "515501218681-bdub359d2nuiapr50ul6p8kk2ucumvon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4m0XGz3xMtVuEF_5DRERpeLac2se9vlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515501218681-bdub359d2nuiapr50ul6p8kk2ucumvon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "515501218681-i12piq2l4a4nthrfi60ipqt9dfaig03g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.neuros"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
