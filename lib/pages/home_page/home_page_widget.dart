@@ -204,7 +204,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '05dwjr56' /* Idk */,
+                                        '05dwjr56' /* Rating */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -287,6 +287,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                             ],
                           ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'drid5j5f' /* Sleep per day */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 5.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'j5cbziip' /* Reommendations */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                        Divider(
+                          thickness: 2.0,
+                          indent: 15.0,
+                          endIndent: 15.0,
+                          color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                       ],
                     ),

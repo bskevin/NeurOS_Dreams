@@ -120,7 +120,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Datos Promedio Semanales',
     },
     '05dwjr56': {
-      'en': 'Idk',
+      'en': 'Rating',
       'es': 'no se',
     },
     '25z8u8js': {
@@ -130,6 +130,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ihkykmzs': {
       'en': 'Sleep Style',
       'es': 'Estilo de Sueño',
+    },
+    'drid5j5f': {
+      'en': 'Sleep per day',
+      'es': '',
+    },
+    'j5cbziip': {
+      'en': 'Reommendations',
+      'es': 'Sueño Semanal',
     },
     'vkj1pawd': {
       'en': 'HOME ',
@@ -295,7 +303,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y5buxw7m': {
       'en': 'Update',
-      'es': 'Acutalizar',
+      'es': 'Actualizar',
     },
     'w15bhbxh': {
       'en': 'Update Profile Data',

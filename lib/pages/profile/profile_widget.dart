@@ -266,14 +266,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 5.0, 0.0, 0.0),
-                                child: StreamBuilder<List<UsersRecord>>(
-                                  stream: queryUsersRecord(
-                                    singleRecord: true,
-                                  ),
+                                    8.0, 8.0, 0.0, 0.0),
+                                child: StreamBuilder<UsersRecord>(
+                                  stream: UsersRecord.getDocument(
+                                      currentUserReference!),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
@@ -291,20 +290,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                       );
                                     }
-                                    List<UsersRecord> textUsersRecordList =
-                                        snapshot.data!;
-                                    // Return an empty Container when the item does not exist.
-                                    if (snapshot.data!.isEmpty) {
-                                      return Container();
-                                    }
-                                    final textUsersRecord =
-                                        textUsersRecordList.isNotEmpty
-                                            ? textUsersRecordList.first
-                                            : null;
+                                    final textUsersRecord = snapshot.data!;
                                     return Text(
                                       valueOrDefault<String>(
-                                        textUsersRecord?.email,
-                                        'No email',
+                                        textUsersRecord.email,
+                                        'email',
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

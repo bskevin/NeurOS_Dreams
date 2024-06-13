@@ -26,11 +26,6 @@ class SleepDataRecord extends FirestoreRecord {
   DateTime? get end => _end;
   bool hasEnd() => _end != null;
 
-  // "Date" field.
-  DateTime? _date;
-  DateTime? get date => _date;
-  bool hasDate() => _date != null;
-
   // "Sleep" field.
   int? _sleep;
   int get sleep => _sleep ?? 0;
@@ -41,12 +36,23 @@ class SleepDataRecord extends FirestoreRecord {
   double get rested => _rested ?? 0.0;
   bool hasRested() => _rested != null;
 
+  // "email_reference" field.
+  DocumentReference? _emailReference;
+  DocumentReference? get emailReference => _emailReference;
+  bool hasEmailReference() => _emailReference != null;
+
+  // "Date" field.
+  DateTime? _date;
+  DateTime? get date => _date;
+  bool hasDate() => _date != null;
+
   void _initializeFields() {
     _beginning = snapshotData['Beginning'] as DateTime?;
     _end = snapshotData['End'] as DateTime?;
-    _date = snapshotData['Date'] as DateTime?;
     _sleep = castToType<int>(snapshotData['Sleep']);
     _rested = castToType<double>(snapshotData['Rested']);
+    _emailReference = snapshotData['email_reference'] as DocumentReference?;
+    _date = snapshotData['Date'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -86,17 +92,19 @@ class SleepDataRecord extends FirestoreRecord {
 Map<String, dynamic> createSleepDataRecordData({
   DateTime? beginning,
   DateTime? end,
-  DateTime? date,
   int? sleep,
   double? rested,
+  DocumentReference? emailReference,
+  DateTime? date,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'Beginning': beginning,
       'End': end,
-      'Date': date,
       'Sleep': sleep,
       'Rested': rested,
+      'email_reference': emailReference,
+      'Date': date,
     }.withoutNulls,
   );
 
@@ -110,14 +118,15 @@ class SleepDataRecordDocumentEquality implements Equality<SleepDataRecord> {
   bool equals(SleepDataRecord? e1, SleepDataRecord? e2) {
     return e1?.beginning == e2?.beginning &&
         e1?.end == e2?.end &&
-        e1?.date == e2?.date &&
         e1?.sleep == e2?.sleep &&
-        e1?.rested == e2?.rested;
+        e1?.rested == e2?.rested &&
+        e1?.emailReference == e2?.emailReference &&
+        e1?.date == e2?.date;
   }
 
   @override
-  int hash(SleepDataRecord? e) => const ListEquality()
-      .hash([e?.beginning, e?.end, e?.date, e?.sleep, e?.rested]);
+  int hash(SleepDataRecord? e) => const ListEquality().hash(
+      [e?.beginning, e?.end, e?.sleep, e?.rested, e?.emailReference, e?.date]);
 
   @override
   bool isValidKey(Object? o) => o is SleepDataRecord;

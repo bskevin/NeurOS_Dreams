@@ -251,9 +251,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+
                     await authManager.deleteUser(context);
 
-                    context.goNamedAuth('HomePage', context.mounted);
+                    context.goNamedAuth('LogIn', context.mounted);
                   },
                   text: FFLocalizations.of(context).getText(
                     'yxynduek' /* Button */,
